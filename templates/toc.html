@@ -11,6 +11,7 @@
     {% for path in root_section.subsections %}
     {% set s = get_section(path=path) %}
     <li>
+        {# TODO: Set selected here as well #}
         <a href="{{ s.permalink | safe }}">
             {% if s.extra.html_title %}
             {% set title = s.extra.html_title %}

@@ -9,6 +9,9 @@
         pkgs = import nixpkgs { inherit system; };
         nativeBuildInputs = with pkgs; [ zola ];
         buildInputs = with pkgs; [ ];
+        nerdfonts = pkgs.nerdfonts.override {
+          fonts = [ "DejaVuSansMono" ];
+        };
       in
       with pkgs; {
         packages = rec {
@@ -19,6 +22,7 @@
             inherit nativeBuildInputs buildInputs;
             configurePhase = ''
               # Pre-processing here
+              ln -sf ${nerdfonts}/share/fonts/truetype/NerdFonts/* static
             '';
             buildPhase = "zola build";
             installPhase = "cp -r public $out";
@@ -27,6 +31,9 @@
         };
         devShells.default = mkShell {
           inherit buildInputs nativeBuildInputs;
+          shellHook = ''
+            ln -sf ${nerdfonts}/share/fonts/truetype/NerdFonts/* static/
+          '';
         };
       });
 }
