@@ -1,4 +1,6 @@
 public/
 .idea
 .vscode
+result
+.direnv
 
