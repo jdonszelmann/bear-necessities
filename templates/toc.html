@@ -1,0 +1,66 @@
+<h3>Index</h3>
+<ul class="toc">
+    {% set root_section = get_section(path="_index.md") %}
+    {% if section %}
+    {% set current_section = section %}
+    {% elif page %}
+    {% set ancestor = page.ancestors | last() %}
+    {% set current_section = get_section(path=ancestor) %}
+    {% endif %}
+
+    {% for path in root_section.subsections %}
+    {% set s = get_section(path=path) %}
+    <li>
+        <a href="{{ s.permalink | safe }}">
+            {% if s.extra.html_title %}
+            {% set title = s.extra.html_title %}
+            {% else %}
+            {% set title = s.title %}
+            {% endif %}
+            {{ title | safe}}
+        </a>
+
+        <ul class="toc">
+            {% for path in s.subsections %}
+            {% set subsection = get_section(path=path) %}
+            {% if subsection == current_section %}
+            {% set clazz = "selected" %}
+            {% else %}
+            {% set clazz = "" %}
+            {%endif%}
+
+            <li class="section">
+                <a class="{{ clazz }}" href="{{ subsection.permalink | safe }}">
+                    {{ subsection.title }}
+                </a>
+                {% if subsection == current_section %}
+                {% if subsection.pages %}
+                <ul class="toc">
+                    {% for p in subsection.pages %}
+                    {% if page %}
+                    {% if page == p %}
+                    {% set class = "selected" %}
+                    {% else %}
+                    {% set class = "" %}
+                    {% endif %}
+                    {% else %}
+                    {% set class = "" %}
+                    {% endif %}
+
+                    <li class="page {{ class }}"><a href="{{ p.permalink }}">{{ p.title }}</a></li>
+
+                    {% endfor %}
+                </ul>
+                {% endif %}
+                {% endif %}
+            </li>
+            {% endfor %}
+            {% for p in s.pages %}
+            <li class="page">
+                <a href="{{ p.permalink | safe}}">{{ p.title }}</a>
+            </li>
+            {% endfor %}
+        </ul>
+    </li>
+    {% endfor %}
+</ul>

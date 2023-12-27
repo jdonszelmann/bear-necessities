@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="{{ config.default_language }}">
+<head>
+    {% include "head.html" %}
+</head>
+<body>
+    <div class="wrapper">
+      {% include "search.html" %}
+
+      <aside class="left">
+        {% block aside %}
+        {% endblock aside %}
+      </aside>
+      <aside class="right">
+      </aside>
+      <main>
+            <div class="content">
+              {% block content %}
+              {% endblock content %}
+            </div>
+      </main>
+
+      <footer>
+      {% block breadcrumbs %}
+      {% endblock breadcrumbs %}
+
+      {% include "copyright.html" %}
+
+      {# <div>&nbsp;</div> #}
+      </footer>
+    </div>
+</body>
+</html>

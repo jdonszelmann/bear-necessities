@@ -1,0 +1,20 @@
+
+
+<div class="breadcrumbs">
+    {% if page %}
+        {% set ancestors = page.ancestors %}
+        {% set last = page %}
+    {% else %}
+        {% set ancestors = section.ancestors %}
+        {% set last = section %}
+    {% endif %}
+
+    {% for a in ancestors %}
+        {% set ancestor = get_section(path=a) %}
+        {# TODO: handle html_title #}
+        <a class="breadcrumb" href="{{ancestor.permalink}}">{{ancestor.title}}</a>
+        <span>/</span>
+    {% endfor %}
+
+    <a class="breadcrumb" href="{{last.permalink}}">{{last.title}}</a>
+</div>

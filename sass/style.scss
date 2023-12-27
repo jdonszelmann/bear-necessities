@@ -1,0 +1,262 @@
+@use "sass:color";
+@import "search.scss";
+@import "variables.scss";
+
+:root,
+:root.light {
+  --bgColor: #EEEEEE;
+  --fgColor: #41474E;
+  --metaColor: #D26878;
+  --linkColor: #5690AF;
+  --hovColor: #22453F;
+  --bgSelect: #E2E2E2;
+  --red: #D26878;
+  --dimRed: #623039;
+  --orange: #e08f67;
+  --dimOrange: #926048;
+  --yellow: #FFFAE1;
+  --dimYellow: #D5C5A1;
+  --green: #56AFA0;
+  --dimGreen: #22453F;
+  --blue: #5690AF;
+  --dimBlue: #223844;
+  --purple: #9271D6;
+  --dimPurple: #47356C;
+  --grey: #CBCDCD;
+  --dimGrey: #646868;
+}
+
+:root.dark {
+  --bgColor: #222529;
+  --fgColor: #D6D6D6;
+  --metaColor: #78B6AD;
+  --linkColor: #DBD5BC;
+  --hovColor: #E2AEA2;
+  --bgSelect: #464949;
+  --red: #CD909B;
+  --dimRed: #684249;
+  --orange: #E2AEA2;
+  --dimOrange: #704941;
+  --yellow: #DBD5BC;
+  --dimYellow: #6F6847;
+  --green: #78B6AD;
+  --dimGreen: #3E615C;
+  --blue: #87C9E5;
+  --dimBlue: #38494F;
+  --purple: #CEA7DE;
+  --dimPurple: #5E406A;
+  --grey: #CBCDCD;
+  --dimGrey: #464949;
+}
+
+@font-face {
+  font-family: 'DejaVu Sans Mono';
+  src: url('DejaVuSansMNerdFontMono-Regular.ttf'),
+}
+
+body,
+html,
+.wrapper {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+
+  font-family: 'DejaVu Sans Mono', sans-serif;
+  font-size: large;
+  background-color: var(--bgColor);
+  color: var(--fgColor);
+}
+
+.wrapper {
+  display: grid;
+}
+
+@media (width > $step1) {
+  .wrapper {
+    transition: 0.5s grid-template-columns ease;
+    grid-template-columns: 18em 10fr 18em;
+    grid-template-rows: auto 10fr auto;
+    grid-template-areas:
+      "left        middle      search"
+      "toc         content     raside"
+      "footer      footer      footer"
+    ;
+  }
+}
+
+@media (width <=$step1) and (width > $step2) {
+  .wrapper {
+    transition: 0.5s grid-template-columns ease;
+    grid-template-columns: 18em 10fr 5em;
+    grid-template-rows: auto 10fr auto;
+    grid-template-areas:
+      "left        middle      search"
+      "toc         content     raside"
+      "footer      footer      footer"
+  }
+}
+
+@media (width <=$step2) {
+  .wrapper {
+    grid-template-areas:
+      "search"
+      "toc"
+      "content"
+      "footer"
+    ;
+    grid-template-columns: auto;
+    grid-template-rows: 4em min-content auto 5em;
+  }
+
+  .content h1 {
+    text-align: center;
+  }
+
+  aside.right {
+    display: none;
+  }
+
+  aside.left {
+    grid-area: toc;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .copyright {
+      text-align: center;
+    }
+  }
+}
+
+@media (width >$step2) {
+  footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 0.5em;
+  }
+}
+
+footer {
+  padding: 1em;
+  grid-area: footer;
+
+  .breadcrumbs {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    .breadcrumb {
+      margin: 0;
+      padding: 0;
+      display: block;
+    }
+
+    span {
+      margin: 0;
+      padding: 0;
+    }
+  }
+}
+
+aside.left {
+  grid-area: toc;
+}
+
+aside.right {
+  grid-area: raside;
+}
+
+main {
+  grid-area: content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1em;
+}
+
+.content {
+  width: 100%;
+}
+
+.toc {
+  .selected {
+    font-weight: bold;
+  }
+}
+
+ul.toc {
+  ul {
+    padding-left: 1em;
+  }
+
+  // .section::marker, .page::marker {
+  // font-size: larger;
+  // }
+
+  .section::marker {
+    content: " ";
+  }
+
+  .page::marker {
+    content: " ";
+  }
+
+  ;
+}
+
+// (Default) List Styling
+ul {
+  list-style: none;
+  margin-top: .5rem;
+  margin-bottom: .5rem;
+}
+
+li {
+  margin-bottom: .25rem;
+}
+
+ul li::marker {
+  content: '» ';
+  color: var(--metaColor)
+}
+
+ul li:hover::marker {
+  content: '# ';
+  font-weight: 700;
+  color: var(--linkColor)
+}
+
+// (Default) link styling
+a {
+  text-decoration: none;
+  padding: 0 .2rem 0 .2rem;
+  border-radius: .3rem;
+  color: var(--linkColor);
+}
+
+a:focus,
+a:hover {
+  background-color: var(--linkColor);
+  color: var(--bgColor)
+}
+
+mark {
+  all: unset;
+  color: var(--metaColor);
+}
+
+// Headers
+h1,
+h2,
+h3 {
+  padding: 0 1em;
+}
