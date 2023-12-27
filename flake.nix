@@ -13,7 +13,7 @@
           fonts = [ "DejaVuSansMono" ];
         };
       in
-      with pkgs; {
+      with pkgs; rec {
         packages = rec {
           website = pkgs.stdenv.mkDerivation {
             pname = "essentials-website";
@@ -22,7 +22,6 @@
             inherit nativeBuildInputs buildInputs;
             configurePhase = ''
               # Pre-processing here
-              ln -sf ${nerdfonts}/share/fonts/truetype/NerdFonts/* static
             '';
             buildPhase = "zola build";
             installPhase = "cp -r public $out";
@@ -31,9 +30,7 @@
         };
         devShells.default = mkShell {
           inherit buildInputs nativeBuildInputs;
-          shellHook = ''
-            ln -sf ${nerdfonts}/share/fonts/truetype/NerdFonts/* static/
-          '';
+          shellHook = packages.website.configurePhase;
         };
       });
 }
