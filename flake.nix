@@ -22,6 +22,7 @@
             inherit nativeBuildInputs buildInputs;
             configurePhase = ''
               # Pre-processing here
+              ln -sf ${nerdfonts}/share/fonts/truetype/NerdFonts/* static/fonts/
             '';
             buildPhase = "zola build";
             installPhase = "cp -r public $out";
