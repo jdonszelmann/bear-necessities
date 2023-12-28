@@ -5,6 +5,8 @@
 
 :root,
 :root.light {
+  --inputBackground: #FFFFFF;
+  --inputBorder: initial;
   --bgColor: #EEEEEE;
   --fgColor: #41474E;
   --metaColor: #D26878;
@@ -28,6 +30,8 @@
 }
 
 :root.dark {
+  --inputBackground: #464949;
+  --inputBorder: #222529;
   --bgColor: #222529;
   --fgColor: #D6D6D6;
   --metaColor: #78B6AD;
@@ -99,7 +103,7 @@ html,
     display: block;
   }
 
-  #search-parent {
+  #topright {
     position: fixed;
     right: 0;
     top: 0;

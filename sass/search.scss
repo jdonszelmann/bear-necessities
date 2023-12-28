@@ -1,30 +1,42 @@
 @import "variables.scss";
 
-#search-parent {
+#topright {
   margin-top: 0.5em;
+  margin-right: 0.5em;
   grid-area: search;
   display: flex;
   flex-direction: row-reverse;
   align-items: center;
+}
+
+#search-parent {
+  display: flex;
+  flex-direction: column;
   position: relative;
+  flex-grow: 1;
 }
 
 #search {
-  margin: 0.1em 1em 0.1em 1em;
   padding: 0.5em 1em;
   border-radius: 0.35em;
   border-style: solid;
+  border-color: var(--inputBorder);
+  background-color: var(--inputBackground);
+  color: var(--fgColor);
 }
 
 @media (width > $step2) {
-  #search-parent {
+  #topright {
     justify-content: right;
+  }
+
+  #search-parent {
+    min-width: 7em;
   }
 
   #search {
     max-width: 30vw;
     text-align: right;
-    min-width: 7em;
   }
 
   .search-results {
@@ -33,7 +45,7 @@
 }
 
 @media (width <=$step2) {
-  #search-parent {
+  #topright {
     justify-content: center;
     align-items: center;
     padding: 0em 1em;
@@ -45,7 +57,7 @@
   }
 
   .search-results {
-    width: calc(100vw - 2em);
+    width: calc(100vw - 3em);
   }
 }
 
@@ -54,7 +66,7 @@
   font-size: smaller;
 
   border: 1px solid var(--fgColor);
-  margin: 0.1em 1em 1em 1em;
+  margin-top: 0.4em;
   border-radius: 0.35em;
   box-sizing: border-box;
 
