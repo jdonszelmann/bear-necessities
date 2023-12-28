@@ -36,7 +36,7 @@
 
             <li class="section">
                 <a class="{{ class }}" href="{{ subsection.permalink | safe }}">
-                    {{ subsection.title }}
+                    {{ macros::get_title(of=subsection) }}
                 </a>
                 {% if subsection == current_section %}
                 {% if subsection.pages %}
@@ -71,7 +71,7 @@
                 {% if page and page == p %}
                 {% set class = "selected" %}
                 {% endif %}
-                <a href="{{ p.permalink | safe}}" class="{{ class }}">{{ p.title }}</a>
+                <a href="{{ p.permalink | safe}}" class="{{ class }}">{{ macros::get_title(of=p) }}</a>
 
 
                 {%if page and page == p %}

@@ -1,8 +1,12 @@
 {% macro get_title(of) %}
-{% if of.extra.html_title %}
-{{ of.extra.html_title | safe }}
-{% else %}
-{{ of.title }}
-{% endif %}
 
+<span aria-label="{{of.extra.aria_title | default(value=of.title)}}">
+
+    {% if of.extra.html_title %}
+    {{ of.extra.html_title | safe }}
+    {% else %}
+    {{ of.title }}
+    {% endif %}
+
+</span>
 {% endmacro get_title %}
