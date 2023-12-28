@@ -72,6 +72,17 @@
                 {% set class = "selected" %}
                 {% endif %}
                 <a href="{{ p.permalink | safe}}" class="{{ class }}">{{ p.title }}</a>
+
+
+                {%if page and page == p %}
+                <ul class="toc">
+
+                    {% for p in page.toc %}
+                    <li class="heading {{ class }}"><a href="{{ p.permalink }}">{{ macros::get_title(of=p) }}</a>
+                    </li>
+                    {% endfor %}
+                </ul>
+                {% endif %}
             </li>
             {% endfor %}
         </ul>
