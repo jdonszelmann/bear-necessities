@@ -90,6 +90,13 @@ html,
       "footer      footer      footer"
     ;
   }
+
+  img {
+    max-width: 50vw;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+  }
 }
 
 @media (width <=$step1) and (width > $step2) {
@@ -242,7 +249,7 @@ ul.toc {
   }
 
   .heading::marker {
-    content: "#";
+    content: "";
   }
 }
 
@@ -263,7 +270,6 @@ ul li::marker {
 }
 
 ul li:hover::marker {
-  content: '# ';
   font-weight: 700;
   color: var(--linkColor)
 }
@@ -296,6 +302,34 @@ mark,
 strong {
   all: unset;
   color: var(--metaColor);
+}
+
+img {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+}
+
+.zola-anchor {
+
+  &:hover,
+  &:focus {
+    color: inherit;
+    background-color: inherit;
+  }
+
+  visibility: hidden;
+  position: relative;
+
+  &::before {
+    content: "#";
+    visibility: visible;
+    position: absolute;
+
+    &:hover {
+      all: inherit;
+    }
+  }
 }
 
 // Headers
