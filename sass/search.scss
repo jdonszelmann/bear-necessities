@@ -4,10 +4,8 @@
   grid-area: search;
   display: flex;
   flex-direction: column;
-
-  .holder {
-    position: relative;
-  }
+  align-items: end;
+  position: relative;
 }
 
 #search {

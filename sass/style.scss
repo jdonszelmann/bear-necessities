@@ -83,7 +83,7 @@ html,
 @media (width > $step1) {
   .wrapper {
     transition: 0.5s grid-template-columns ease;
-    grid-template-columns: 18em 10fr 18em;
+    grid-template-columns: minmax(18em, 1fr) minmax(40em, 60em) 1fr;
     grid-template-rows: auto 10fr auto;
     grid-template-areas:
       "left        header      search"
@@ -109,7 +109,7 @@ html,
 @media (width <=$step1) and (width > $step2) {
   .wrapper {
     transition: 0.5s grid-template-columns ease;
-    grid-template-columns: 18em 10fr 6em;
+    grid-template-columns: 18em minmax(20em, 40em) 6em;
     grid-template-rows: auto 10fr auto;
     grid-template-areas:
       "left        header      search"
@@ -127,7 +127,7 @@ html,
       "content"
       "footer"
     ;
-    grid-template-columns: auto;
+    grid-template-columns: 100vw;
     grid-template-rows: 2.5em 3em min-content auto 5em;
   }
 
@@ -143,7 +143,7 @@ html,
     grid-area: toc;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: baseline;
     margin-left: initial;
   }
 
@@ -158,6 +158,10 @@ html,
     .copyright {
       text-align: center;
     }
+  }
+
+  ul.toc {
+    padding-left: 2em;
   }
 }
 
