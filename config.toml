@@ -1,5 +1,5 @@
 # The URL the site will be built for
-base_url = "https://es.0x76.dev"
+base_url = "https://bear.0x76.dev"
 
 # Whether to automatically compile all Sass files in the sass directory
 compile_sass = true
