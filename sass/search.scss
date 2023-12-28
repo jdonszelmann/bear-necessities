@@ -1,15 +1,16 @@
 @import "variables.scss";
 
 #search-parent {
+  margin-top: 0.5em;
   grid-area: search;
   display: flex;
   flex-direction: row-reverse;
-  align-items: end;
+  align-items: center;
   position: relative;
 }
 
 #search {
-  margin: 1em 1em 0.1em 1em;
+  margin: 0.1em 1em 0.1em 1em;
   padding: 0.5em 1em;
   border-radius: 0.35em;
   border-style: solid;
@@ -23,6 +24,7 @@
   #search {
     max-width: 30vw;
     text-align: right;
+    min-width: 7em;
   }
 
   .search-results {
