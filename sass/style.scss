@@ -129,6 +129,7 @@ html,
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-left: initial;
   }
 
   footer {
@@ -176,6 +177,7 @@ footer {
 
 aside.left {
   grid-area: toc;
+  margin-left: 1em;
 }
 
 aside.right {
@@ -201,9 +203,7 @@ main {
 }
 
 ul.toc {
-  ul {
     padding-left: 1em;
-  }
 
   // .section::marker, .page::marker {
   // font-size: larger;
@@ -262,8 +262,8 @@ mark {
 }
 
 // Headers
-h1,
-h2,
-h3 {
-  padding: 0 1em;
-}
+// h1,
+// h2,
+// h3 {
+//   padding: 0 1em;
+// }

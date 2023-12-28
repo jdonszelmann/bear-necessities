@@ -9,6 +9,7 @@
 
       <aside class="left">
         {% block aside %}
+        {% include "toc.html" %}
         {% endblock aside %}
       </aside>
       <aside class="right">
@@ -22,11 +23,10 @@
 
       <footer>
       {% block breadcrumbs %}
+      {% include "footer/breadcrumbs.html" %}
+
+      {% include "footer/copyright.html" %}
       {% endblock breadcrumbs %}
-
-      {% include "copyright.html" %}
-
-      {# <div>&nbsp;</div> #}
       </footer>
     </div>
 </body>
