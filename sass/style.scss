@@ -106,12 +106,6 @@ html,
     margin-right: auto;
     display: block;
   }
-
-  #topright {
-    position: fixed;
-    right: 0;
-    top: 0;
-  }
 }
 
 @media (width <=$step1) and (width > $step2) {

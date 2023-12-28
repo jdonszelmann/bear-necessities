@@ -2,6 +2,7 @@ pre {
     padding: 1em;
     border-radius: 0.25em;
     overflow-x: scroll;
+    position: relative;
 
     &::before {
         display: block;
@@ -12,6 +13,28 @@ pre {
         margin-bottom: 0.5em;
         width: fit-content;
         padding: 0.25em;
+    }
+}
+
+.copy-button {
+    position: absolute;
+    font-family: 'DejaVu Sans Mono', sans-serif;
+    font-size: larger;
+    top: 0.25em;
+    right: 0.25em;
+    border: none;
+    width: 2em;
+    height: 2em;
+    margin: 0;
+    padding: 0.25em;
+    border-radius: 0.25em;
+    color: var(--fgColor);
+    background-color: var(--bgColor);
+    cursor: pointer;
+
+    &:hover {
+        background-color: var(--linkColor);
+        color: var(--bgColor);
     }
 }
 
