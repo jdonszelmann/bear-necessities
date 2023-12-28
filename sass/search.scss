@@ -25,7 +25,7 @@
   color: var(--fgColor);
 }
 
-@media (width > $step2) {
+@media (min-width: $step2) {
   #topright {
     justify-content: right;
   }
@@ -44,7 +44,7 @@
   }
 }
 
-@media (width <=$step2) {
+@media (max-width: $step2) {
   #topright {
     justify-content: center;
     align-items: center;

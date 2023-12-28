@@ -88,7 +88,7 @@ html,
   display: grid;
 }
 
-@media (width > $step1) {
+@media (min-width: $step1) {
   .wrapper {
     transition: 0.5s grid-template-columns ease;
     grid-template-columns: minmax(18em, 1fr) minmax(40em, 60em) 1fr;
@@ -108,7 +108,7 @@ html,
   }
 }
 
-@media (width <=$step1) and (width > $step2) {
+@media (max-width: $step1) and (min-width: $step2) {
   .wrapper {
     transition: 0.5s grid-template-columns ease;
     grid-template-columns: 18em minmax(20em, 60em) 5em;
@@ -120,7 +120,7 @@ html,
   }
 }
 
-@media (width <=$step2) {
+@media (max-width: $step2) {
   .wrapper {
     grid-template-areas:
       "header"
@@ -167,7 +167,7 @@ html,
   }
 }
 
-@media (width >$step2) {
+@media (min-width: $step2) {
   footer {
     display: flex;
     flex-direction: column;
@@ -269,6 +269,6 @@ ul.toc {
   }
 
   .heading::marker {
-    content: "";
+    content: " ";
   }
 }
