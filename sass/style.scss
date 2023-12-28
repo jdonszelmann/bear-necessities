@@ -343,6 +343,19 @@ img {
   }
 }
 
+blockquote {
+  border-left: .25rem solid var(--metaColor);
+  margin: 1rem;
+  padding: 0 0 0 1rem;
+
+  &::before {
+    content: "note";
+    text-transform: uppercase;
+    font-weight: bold;
+    color: var(--metaColor);
+  }
+}
+
 // Headers
 // h1,
 // h2,

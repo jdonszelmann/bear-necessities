@@ -35,3 +35,5 @@ You can even chain this:
 ```bash
 ssh -J auser@a:aport,buser@b:bport,cuser@c:cport duser@d
 ```
+
+> You can of course leave out the ports. They default to 22.
