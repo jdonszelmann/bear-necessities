@@ -2,11 +2,7 @@
 
 {% block content %}
 
-{% if section.extra.html_title %} 
-<h1>{{ section.extra.html_title | safe }}</h1>
-{% else %} 
-<h1>{{ section.title | safe }}</h1> 
-{% endif %}
+<h1>{{ macros::get_title(of=section) }}</h1>
 
 {{ section.content | safe }}
 

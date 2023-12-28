@@ -24,11 +24,7 @@
         {% endif %}
         {# TODO: Set selected here as well #}
         <a href="{{ s.permalink | safe }}" class="{{ class }}">
-            {% set title = s.title %}
-            {% if s.extra.html_title %}
-            {% set title = s.extra.html_title %}
-            {% endif %}
-            {{ title | safe}}
+            {{ macros::get_title(of=s) }}
         </a>
 
         <ul class="toc">
@@ -52,7 +48,7 @@
                     {% set class = "selected" %}
                     {% endif %}
 
-                    <li class="page {{ class }}"><a href="{{ p.permalink }}">{{ p.title }}</a></li>
+                    <li class="page {{ class }}"><a href="{{ p.permalink }}">{{ macros::get_title(of=p) }}</a></li>
 
                     {% endfor %}
                 </ul>

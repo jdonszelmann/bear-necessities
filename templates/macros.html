@@ -1,0 +1,8 @@
+{% macro get_title(of) %}
+{% if of.extra.html_title %}
+{{ of.extra.html_title | safe }}
+{% else %}
+{{ of.title }}
+{% endif %}
+
+{% endmacro get_title %}
