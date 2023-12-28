@@ -18,5 +18,4 @@ highlight_code = true
 highlight_theme = "charcoal"
 
 [extra]
-default_theme = "light"
-# Put all your custom variables here
+default_theme = "dark"
