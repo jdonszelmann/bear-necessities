@@ -113,7 +113,7 @@ html,
 @media (width <=$step1) and (width > $step2) {
   .wrapper {
     transition: 0.5s grid-template-columns ease;
-    grid-template-columns: 18em minmax(20em, 40em) 6em;
+    grid-template-columns: 18em minmax(20em, 60em) 5em;
     grid-template-rows: auto 10fr auto;
     grid-template-areas:
       "left        header      search"
@@ -148,7 +148,7 @@ html,
     display: flex;
     flex-direction: column;
     align-items: baseline;
-    margin-left: initial;
+    margin-left: 4em;
   }
 
   footer {
@@ -180,6 +180,7 @@ html,
   aside.left {
     position: fixed;
     top: 0;
+    margin-left: 1em;
   }
 }
 
@@ -223,7 +224,6 @@ footer {
 
 aside.left {
   grid-area: toc;
-  margin-left: 1em;
 }
 
 aside.right {
@@ -270,97 +270,5 @@ ul.toc {
 
   .heading::marker {
     content: "";
-  }
-}
-
-// (Default) List Styling
-ul {
-  list-style: none;
-  margin-top: .5rem;
-  margin-bottom: .5rem;
-}
-
-li {
-  margin-bottom: .25rem;
-}
-
-ul li::marker {
-  content: '» ';
-  color: var(--metaColor)
-}
-
-ul li:hover::marker {
-  font-weight: 700;
-  color: var(--linkColor)
-}
-
-// (Default) link styling
-a {
-  text-decoration: none;
-  padding: 0 .2rem 0 .2rem;
-  border-radius: .3rem;
-  color: var(--linkColor);
-}
-
-a.plain {
-  all: unset;
-
-  &:focus,
-  &:hover {
-    all: unset;
-    cursor: pointer;
-  }
-}
-
-a:focus,
-a:hover {
-  background-color: var(--linkColor);
-  color: var(--bgColor)
-}
-
-mark,
-strong {
-  all: unset;
-  color: var(--metaColor);
-}
-
-img {
-  height: 100%;
-  width: 100%;
-  object-fit: contain;
-}
-
-.zola-anchor {
-
-  &:hover,
-  &:focus {
-    color: inherit;
-    background-color: inherit;
-  }
-
-  visibility: hidden;
-  position: relative;
-
-  &::before {
-    content: "#";
-    visibility: visible;
-    position: absolute;
-
-    &:hover {
-      all: inherit;
-    }
-  }
-}
-
-blockquote {
-  border-left: .25rem solid var(--metaColor);
-  margin: 1rem;
-  padding: 0 0 0 1rem;
-
-  &::before {
-    content: "note";
-    text-transform: uppercase;
-    font-weight: bold;
-    color: var(--metaColor);
   }
 }

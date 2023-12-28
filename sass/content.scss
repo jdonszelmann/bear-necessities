@@ -2,18 +2,25 @@ pre {
     padding: 1em;
     border-radius: 0.25em;
     overflow-x: scroll;
+
+    &::before {
+        display: block;
+        content: attr(data-lang);
+        font-weight: bold;
+        font-size: larger;
+        border-bottom: .25rem solid var(--metaColor);
+        margin-bottom: 1em;
+        width: fit-content;
+        padding: 0.25em;
+    }
 }
 
 code {
-    color: var(--bgColor);
-    background-color: var(--fgColor);
-    padding: .13rem .3rem .15rem .3rem;
-    border-radius: .1rem;
+    color: var(--light);
+    background-color: var(--dark);
+    padding: .2rem .2rem .1rem .2rem;
+    border-radius: .15rem;
     font-size: larger;
-
-    // &::before {
-    // attr(class)
-    // }
 }
 
 pre code {
