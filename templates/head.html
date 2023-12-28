@@ -6,11 +6,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 <meta name="robots" content="index, follow" />
 {% if page.title %}
-{% set title = page.title %}
+{% set parent = page.ancestors | last() %}
+{% set parent_section = get_section(path=parent) %}
+{% set title = parent_section.title ~ ": " ~ page.title %}
 {% elif section.title %}
 {% set title = section.title %}
 {% elif config.title %}
 {% set title = config.title %}
+{% endif %}
+{% if title is not containing("🐻") %}
+{% set title = "🐻 " ~ title %}
 {% endif %}
 
 {% if title %}
