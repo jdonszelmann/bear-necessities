@@ -269,6 +269,16 @@ a {
   color: var(--linkColor);
 }
 
+a.plain {
+  all: unset;
+
+  &:focus,
+  &:hover {
+    all: unset;
+    cursor: pointer;
+  }
+}
+
 a:focus,
 a:hover {
   background-color: var(--linkColor);
