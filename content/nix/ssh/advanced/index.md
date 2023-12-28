@@ -19,3 +19,19 @@ Now, in your web browser (Firefox shown below) go to proxy settings
 (about:preferences, search "proxy") and configure as follows:
 
 ![Setting up a proxy under Firefox: Select Manual Proxy Configuration and leave all fields blank except "SOCKS Host" (fill with localhost) and the corresponding port (9999)](./proxy-firefox.png)
+
+## Proxy Jumping
+
+Sometimes, you can only access a machine through ssh, from another machine that you ssh into. 
+Let's give them names: you can access machine **b** through machine **a**, 
+and you can only access machine **a** from your computer.
+Instead of first ssh-ing to **a** and then to **b**, you can use proxy jumping to instantly ssh into **b**.
+To do so, use the following commands:
+
+```bash
+ssh -J auser@a:aport buser@b
+```
+You can even chain this:
+```bash
+ssh -J auser@a:aport,buser@b:bport,cuser@c:cport duser@d
+```
