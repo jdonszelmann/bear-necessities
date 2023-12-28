@@ -227,7 +227,7 @@ pre {
 }
 
 ul.toc {
-  padding-left: 1em;
+  padding-left: 0.6em;
 
   // .section::marker, .page::marker {
   // font-size: larger;
@@ -241,7 +241,9 @@ ul.toc {
     content: " ";
   }
 
-  ;
+  .heading::marker {
+    content: "#";
+  }
 }
 
 // (Default) List Styling

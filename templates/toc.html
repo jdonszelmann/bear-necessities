@@ -49,6 +49,16 @@
 
                     <li class="page {{ class }}"><a href="{{ p.permalink }}">{{ macros::get_title(of=p) }}</a></li>
 
+                    {%if page and page == p %}
+                    <ul class="toc">
+
+                        {% for p in page.toc %}
+                        <li class="heading {{ class }}"><a href="{{ p.permalink }}">{{ macros::get_title(of=p) }}</a>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                    {% endif %}
+
                     {% endfor %}
                 </ul>
                 {% endif %}
