@@ -3,7 +3,7 @@
 #search-parent {
   grid-area: search;
   display: flex;
-  flex-direction: column;
+  flex-direction: row-reverse;
   align-items: end;
   position: relative;
 }
@@ -96,4 +96,46 @@
       border-bottom-right-radius: 0.28em;
     }
   }
+}
+
+
+// Theme icon
+.themeButton {
+  color: var(--metaColor);
+}
+
+.icons {
+  width: 2.0rem;
+  height: 2.0rem;
+  aspect-ratio: 1/1;
+  display: inline-block;
+  vertical-align: middle;
+  color: var(--fgColor);
+  fill: var(--fgColor);
+  background-color: transparent;
+}
+
+.icons__background:hover {
+  background-color: transparent;
+  color: var(--metaColor);
+}
+
+.themeButton {
+  cursor: pointer;
+  border: none;
+  font-size: 1.8rem;
+  background-color: transparent
+}
+
+.dark .themeButton.dark,
+.themeButton.light {
+  display: none
+}
+
+.dark .themeButton.light {
+  display: block
+}
+
+.themeSwitch {
+  display: flex;
 }

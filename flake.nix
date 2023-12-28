@@ -30,6 +30,7 @@
         };
         devShells.default = mkShell {
           inherit buildInputs nativeBuildInputs;
+          packages = with pkgs; [ lychee ];
           shellHook = packages.website.configurePhase;
         };
       });

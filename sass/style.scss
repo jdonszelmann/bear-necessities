@@ -244,9 +244,119 @@ main {
   }
 }
 
-// Headers
-// h1,
-// h2,
-// h3 {
-//   padding: 0 1em;
-// }
+pre {
+  padding: 1em;
+  border-radius: 0.25em;
+}
+
+ul.toc {
+  padding-left: 0.6em;
+
+  // .section::marker, .page::marker {
+  // font-size: larger;
+  // }
+
+  .section::marker {
+    content: " ";
+  }
+
+  .page::marker {
+    content: " ";
+  }
+
+  .heading::marker {
+    content: "";
+  }
+}
+
+// (Default) List Styling
+ul {
+  list-style: none;
+  margin-top: .5rem;
+  margin-bottom: .5rem;
+}
+
+li {
+  margin-bottom: .25rem;
+}
+
+ul li::marker {
+  content: '» ';
+  color: var(--metaColor)
+}
+
+ul li:hover::marker {
+  font-weight: 700;
+  color: var(--linkColor)
+}
+
+// (Default) link styling
+a {
+  text-decoration: none;
+  padding: 0 .2rem 0 .2rem;
+  border-radius: .3rem;
+  color: var(--linkColor);
+}
+
+a.plain {
+  all: unset;
+
+  &:focus,
+  &:hover {
+    all: unset;
+    cursor: pointer;
+  }
+}
+
+a:focus,
+a:hover {
+  background-color: var(--linkColor);
+  color: var(--bgColor)
+}
+
+mark,
+strong {
+  all: unset;
+  color: var(--metaColor);
+}
+
+img {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+}
+
+.zola-anchor {
+
+  &:hover,
+  &:focus {
+    color: inherit;
+    background-color: inherit;
+  }
+
+  visibility: hidden;
+  position: relative;
+
+  &::before {
+    content: "#";
+    visibility: visible;
+    position: absolute;
+
+    &:hover {
+      all: inherit;
+    }
+  }
+}
+
+blockquote {
+  border-left: .25rem solid var(--metaColor);
+  margin: 1rem;
+  padding: 0 0 0 1rem;
+
+  &::before {
+    content: "note";
+    text-transform: uppercase;
+    font-weight: bold;
+    color: var(--metaColor);
+  }
+}

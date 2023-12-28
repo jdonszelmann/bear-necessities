@@ -18,4 +18,5 @@ highlight_code = true
 highlight_theme = "subway-madrid"
 
 [extra]
+default_theme = "light"
 # Put all your custom variables here
