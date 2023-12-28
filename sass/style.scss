@@ -6,7 +6,9 @@
 :root,
 :root.light {
   --bgColor: #EEEEEE;
+  --light: #EEEEEE;
   --fgColor: #41474E;
+  --dark: #41474E;
   --metaColor: #D26878;
   --linkColor: #5690AF;
   --hovColor: #22453F;
@@ -29,7 +31,9 @@
 
 :root.dark {
   --bgColor: #222529;
+  --dark: #222529;
   --fgColor: #D6D6D6;
+  --light: #D6D6D6;
   --metaColor: #78B6AD;
   --linkColor: #DBD5BC;
   --hovColor: #E2AEA2;
