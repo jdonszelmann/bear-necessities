@@ -1,0 +1,161 @@
+pre {
+    padding: 1em;
+    border-radius: 0.25em;
+    overflow-x: scroll;
+}
+
+code {
+    color: var(--bgColor);
+    background-color: var(--fgColor);
+    padding: .13rem .3rem .15rem .3rem;
+    border-radius: .1rem;
+    font-size: larger;
+
+    // &::before {
+    // attr(class)
+    // }
+}
+
+pre code {
+    color: inherit;
+    background-color: inherit;
+    padding: 0;
+    border-radius: inherit;
+}
+
+ul.toc {
+    padding-left: 0.6em;
+
+    // .section::marker, .page::marker {
+    // font-size: larger;
+    // }
+
+    .section::marker {
+        content: " ";
+    }
+
+    .page::marker {
+        content: " ";
+    }
+
+    .heading::marker {
+        content: "";
+    }
+}
+
+// (Default) List Styling
+ul {
+    list-style: none;
+    margin-top: .5rem;
+    margin-bottom: .5rem;
+}
+
+li {
+    margin-bottom: .25rem;
+}
+
+ul li::marker {
+    content: '» ';
+    color: var(--metaColor)
+}
+
+ul li:hover::marker {
+    font-weight: 700;
+    color: var(--linkColor)
+}
+
+// (Default) link styling
+a {
+    text-decoration: none;
+    padding: 0 .2rem 0 .2rem;
+    border-radius: .3rem;
+    color: var(--linkColor);
+}
+
+a.plain {
+    all: unset;
+
+    &:focus,
+    &:hover {
+        all: unset;
+        cursor: pointer;
+    }
+}
+
+a:focus,
+a:hover {
+    background-color: var(--linkColor);
+    color: var(--bgColor)
+}
+
+mark,
+strong {
+    all: unset;
+    color: var(--metaColor);
+}
+
+img {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+}
+
+.zola-anchor {
+
+    &:hover,
+    &:focus {
+        color: inherit;
+        background-color: inherit;
+    }
+
+    visibility: hidden;
+    position: relative;
+
+    &::before {
+        content: "";
+        visibility: visible;
+        position: absolute;
+
+        &:hover {
+            all: inherit;
+        }
+    }
+}
+
+blockquote {
+    border-left: .25rem solid var(--metaColor);
+    margin: 1rem;
+    padding: 0 0 0 1rem;
+
+    &::before {
+        content: "note";
+        text-transform: uppercase;
+        font-weight: bold;
+        color: var(--metaColor);
+    }
+}
+
+table {
+    table-layout: fixed;
+    width: 100%;
+    border-collapse: collapse;
+    border: none;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1rem;
+    line-height: 1.1
+}
+
+thead th:first-child {
+    width: 20%
+}
+
+th {
+    font-weight: 400
+}
+
+td,
+th {
+    padding: .5rem;
+    border: dashed .1rem var(--metaColor)
+}
