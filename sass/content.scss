@@ -86,9 +86,11 @@ li {
 }
 
 ul li::marker {
-    font-family: 'DejaVu Sans Mono', sans-serif;
-    content: '» ';
     color: var(--metaColor)
+}
+
+ul li {
+    list-style-type: '» ';
 }
 
 ul li:hover::marker {

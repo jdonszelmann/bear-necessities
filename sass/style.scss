@@ -260,15 +260,15 @@ ul.toc {
   // font-size: larger;
   // }
 
-  .section::marker {
-    content: " ";
+  .section {
+    list-style-type: " ";
   }
 
-  .page::marker {
-    content: " ";
+  .page {
+    list-style-type: " ";
   }
 
-  .heading::marker {
-    content: " ";
+  .heading {
+    list-style-type: " ";
   }
 }
