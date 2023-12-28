@@ -22,7 +22,6 @@
         {% if s == parent_section %}
         {% set class = "selected" %}
         {% endif %}
-        {# TODO: Set selected here as well #}
         <a href="{{ s.permalink | safe }}" class="{{ class }}">
             {{ macros::get_title(of=s) }}
         </a>

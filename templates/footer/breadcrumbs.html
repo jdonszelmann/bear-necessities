@@ -9,7 +9,6 @@
 
     {% for a in ancestors %}
     {% set ancestor = get_section(path=a) %}
-    {# TODO: handle html_title #}
     <a class="breadcrumb" href="{{ancestor.permalink}}">{{ macros::get_title(of=ancestor) }}</a>
     <span>/</span>
     {% endfor %}
