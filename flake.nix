@@ -10,10 +10,9 @@
         nativeBuildInputs = with pkgs; [ zola ];
         buildInputs = with pkgs; [ ];
         nerdfonts = pkgs.nerdfonts.override {
-          fonts = [ "DejaVuSansMono" ];
+          fonts = [ "DejaVuSansMono" "NerdFontsSymbolsOnly" ];
         };
-      in
-      with pkgs; rec {
+      in with pkgs; rec {
         packages = rec {
           website = pkgs.stdenv.mkDerivation {
             pname = "essentials-website";
