@@ -95,7 +95,7 @@ html,
 @media (width <=$step1) and (width > $step2) {
   .wrapper {
     transition: 0.5s grid-template-columns ease;
-    grid-template-columns: 18em 10fr 5em;
+    grid-template-columns: 18em 10fr 6em;
     grid-template-rows: auto 10fr auto;
     grid-template-areas:
       "left        header      search"

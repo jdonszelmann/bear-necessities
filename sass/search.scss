@@ -1,24 +1,27 @@
 @import "variables.scss";
 
 #search-parent {
-    grid-area: search;
-    display: flex;
-    flex-direction: row;
-    justify-content: right;
+  grid-area: search;
+  display: flex;
+  flex-direction: column;
 
-    .holder {
-        position: relative;
-    }
+  .holder {
+    position: relative;
+  }
 }
 
 #search {
-    margin: 1em 1em 0.1em 1em;
-    padding: 0.5em 1em;
-    border-radius: 0.35em;
-    border-style:solid;
+  margin: 1em 1em 0.1em 1em;
+  padding: 0.5em 1em;
+  border-radius: 0.35em;
+  border-style: solid;
 }
 
 @media (width > $step2) {
+  #search-parent {
+    justify-content: right;
+  }
+
   #search {
     max-width: 30vw;
     text-align: right;
@@ -29,58 +32,70 @@
   }
 }
 
-@media (width <= $step2) {
+@media (width <=$step2) {
+  #search-parent {
+    justify-content: center;
+    align-items: center;
+    padding: 0em 1em;
+  }
+
   #search {
     width: 100%;
     text-align: center;
   }
+
   .search-results {
     width: calc(100vw - 2em);
-    top: 5em;
   }
 }
 
 .search-results {
-    background-color: var(--bgColor);
-    font-size: smaller;
+  background-color: var(--bgColor);
+  font-size: smaller;
 
-    border: 1px solid var(--fgColor);
-    margin: 0.1em 1em 1em 1em;
-    border-radius: 0.35em;
+  border: 1px solid var(--fgColor);
+  margin: 0.1em 1em 1em 1em;
+  border-radius: 0.35em;
+  box-sizing: border-box;
+
+
+  position: absolute;
+  right: 0;
+  display: none;
+
+  a {
+    color: inherit;
+
+    &:hover,
+    &:focus {
+      color: inherit;
+      background-color: inherit;
+    }
+  }
+
+  li {
+    padding: 0.75em;
+    margin: 0;
     box-sizing: border-box;
 
-    position: absolute;
-    right: 0;
-    display: none;
+    &:hover {
+      background-color: var(--bgSelect);
+    }
+
+    list-style-type: none;
 
     a {
-        color: inherit;
-        &:hover, &:focus {
-            color: inherit;
-            background-color: inherit;
-        }
+      display: block;
     }
-    li { 
-        padding: 0.75em;
-        margin: 0;
-        box-sizing: border-box;
 
-        &:hover {
-            background-color: var(--bgSelect);
-        }
-        list-style-type: none;
-
-        a {
-            display: block;
-        }
-
-        &:first-child {
-            border-top-left-radius: 0.28em;
-            border-top-right-radius: 0.28em;
-        }
-        &:last-child {
-            border-bottom-left-radius: 0.28em;
-            border-bottom-right-radius: 0.28em;
-        }
+    &:first-child {
+      border-top-left-radius: 0.28em;
+      border-top-right-radius: 0.28em;
     }
+
+    &:last-child {
+      border-bottom-left-radius: 0.28em;
+      border-bottom-right-radius: 0.28em;
+    }
+  }
 }
