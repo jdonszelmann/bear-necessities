@@ -2,6 +2,7 @@
 title = "*nix"
 sort_by = "title"
 weight = 1
+insert_anchor_links = "left"
 
 [extra]
 html_title = "<mark>*</mark>nix"
