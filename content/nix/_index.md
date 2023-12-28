@@ -1,6 +1,7 @@
 +++
 title = "*nix"
 sort_by = "title"
+weight = 1
 
 [extra]
 html_title = "<mark>*</mark>nix"

@@ -8,11 +8,23 @@
     {% set current_section = get_section(path=ancestor) %}
     {% endif %}
 
+    {% if current_section.ancestors | length > 1 %}
+        {% set csa = current_section.ancestors | last() %}
+        {% set parent_section = get_section(path=csa)%}
+    {% else %}
+        {% set parent_section = current_section %}
+    {% endif%}
+
     {% for path in root_section.subsections %}
     {% set s = get_section(path=path) %}
     <li>
+        {% if s == parent_section %}
+        {% set clarr = "selected" %}
+        {% else %}
+        {% set clarr = "" %}
+        {% endif %}
         {# TODO: Set selected here as well #}
-        <a href="{{ s.permalink | safe }}">
+        <a href="{{ s.permalink | safe }}" class="{{ clarr }}">
             {% if s.extra.html_title %}
             {% set title = s.extra.html_title %}
             {% else %}
@@ -58,7 +70,16 @@
             {% endfor %}
             {% for p in s.pages %}
             <li class="page">
-                <a href="{{ p.permalink | safe}}">{{ p.title }}</a>
+                    {% if page %}
+                    {% if page == p %}
+                    {% set class = "selected" %}
+                    {% else %}
+                    {% set class = "" %}
+                    {% endif %}
+                    {% else %}
+                    {% set class = "" %}
+                    {% endif %}
+                <a href="{{ p.permalink | safe}}" class="{{ class }}">{{ p.title }}</a>
             </li>
             {% endfor %}
         </ul>
