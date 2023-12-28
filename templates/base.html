@@ -2,34 +2,41 @@
 
 <!DOCTYPE html>
 <html lang="{{ config.default_language }}">
+
 <head>
-    {% include "head.html" %}
+  {% include "head.html" %}
 </head>
+
 <body>
-    <div class="wrapper">
-      {% include "search.html" %}
+  <div class="wrapper">
+    {% include "search.html" %}
 
-      <aside class="left">
-        {% block aside %}
-        {% include "toc.html" %}
-        {% endblock aside %}
-      </aside>
-      <aside class="right">
-      </aside>
-      <main>
-            <div class="content">
-              {% block content %}
-              {% endblock content %}
-            </div>
-      </main>
+    <header class="header">
+      <h1>The 🐻 necessities</h1>
+    </header>
 
-      <footer>
+    <aside class="left">
+      {% block aside %}
+      {% include "toc.html" %}
+      {% endblock aside %}
+    </aside>
+    <aside class="right">
+    </aside>
+    <main>
+      <div class="content">
+        {% block content %}
+        {% endblock content %}
+      </div>
+    </main>
+
+    <footer>
       {% block breadcrumbs %}
       {% include "footer/breadcrumbs.html" %}
 
       {% include "footer/copyright.html" %}
       {% endblock breadcrumbs %}
-      </footer>
-    </div>
+    </footer>
+  </div>
 </body>
+
 </html>

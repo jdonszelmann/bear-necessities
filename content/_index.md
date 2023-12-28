@@ -1,5 +1,5 @@
 +++
-title = "Essential"
+title = "The 🐻 necessities"
 date = 2023-12-28
 sort_by = "weight"
 +++

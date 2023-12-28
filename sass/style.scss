@@ -85,7 +85,7 @@ html,
     grid-template-columns: 18em 10fr 18em;
     grid-template-rows: auto 10fr auto;
     grid-template-areas:
-      "left        middle      search"
+      "left        header      search"
       "toc         content     raside"
       "footer      footer      footer"
     ;
@@ -98,7 +98,7 @@ html,
     grid-template-columns: 18em 10fr 5em;
     grid-template-rows: auto 10fr auto;
     grid-template-areas:
-      "left        middle      search"
+      "left        header      search"
       "toc         content     raside"
       "footer      footer      footer"
   }
@@ -107,13 +107,14 @@ html,
 @media (width <=$step2) {
   .wrapper {
     grid-template-areas:
+      "header"
       "search"
       "toc"
       "content"
       "footer"
     ;
     grid-template-columns: auto;
-    grid-template-rows: 4em min-content auto 5em;
+    grid-template-rows: 2.5em 3em min-content auto 5em;
   }
 
   .content h1 {
@@ -138,6 +139,8 @@ html,
     justify-content: center;
     align-items: center;
 
+    gap: 0.5em;
+
     .copyright {
       text-align: center;
     }
@@ -150,6 +153,22 @@ html,
     flex-direction: column;
     justify-content: space-between;
     gap: 0.5em;
+  }
+}
+
+header {
+  grid-area: header;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  margin-top: 0.5em;
+  margin-left: 1em;
+  margin-left: 1em;
+
+  h1 {
+    margin: 0;
   }
 }
 
@@ -203,7 +222,7 @@ main {
 }
 
 ul.toc {
-    padding-left: 1em;
+  padding-left: 1em;
 
   // .section::marker, .page::marker {
   // font-size: larger;
