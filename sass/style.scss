@@ -97,6 +97,12 @@ html,
     margin-right: auto;
     display: block;
   }
+
+  #search-parent {
+    position: fixed;
+    right: 0;
+    top: 0;
+  }
 }
 
 @media (width <=$step1) and (width > $step2) {
@@ -160,6 +166,11 @@ html,
     flex-direction: column;
     justify-content: space-between;
     gap: 0.5em;
+  }
+
+  aside.left {
+    position: fixed;
+    top: 0;
   }
 }
 
