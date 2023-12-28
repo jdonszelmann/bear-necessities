@@ -7,7 +7,7 @@ weight = 1
 
 # Proxying through SSH
 
-For if you want to access the internet from a web browser as if you're somewhere else where you *can* ssh to. Use
+For if you want to access the internet from a web browser as if you're somewhere else where you **can** ssh to. Use
 ```bash
 ssh -ND 9999 <host>
 ```

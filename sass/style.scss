@@ -221,6 +221,11 @@ main {
   }
 }
 
+pre {
+  padding: 1em;
+  border-radius: 0.25em;
+}
+
 ul.toc {
   padding-left: 1em;
 
@@ -285,7 +290,8 @@ a:hover {
   color: var(--bgColor)
 }
 
-mark {
+mark,
+strong {
   all: unset;
   color: var(--metaColor);
 }
