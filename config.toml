@@ -1,5 +1,6 @@
 # The URL the site will be built for
 base_url = "https://es.0x76.dev"
+title = "The 🐻 necessities"
 
 # Whether to automatically compile all Sass files in the sass directory
 compile_sass = true
@@ -8,6 +9,11 @@ minify_html = true
 # Whether to build a search index to be used later on by a JavaScript library
 build_search_index = true
 default_language = "en"
+
+taxonomies = [
+    { name = "tags", feed = true },
+    { name = "authors", feed = true }
+]
 
 [search]
 index_format = "elasticlunr_json"

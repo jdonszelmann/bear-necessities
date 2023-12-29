@@ -2,6 +2,8 @@
 title = "find"
 date = 2023-12-28
 insert_anchor_links = "left"
+[taxonomies]
+authors = ["Jonathan"]
 +++
 
 Find and [ripgrep](./ripgrep.md) can do similar things. If you find can't do what you're looking for, ripgrep might.

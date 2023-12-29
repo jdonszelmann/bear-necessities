@@ -6,6 +6,8 @@
     {% elif page %}
     {% set ancestor = page.ancestors | last() %}
     {% set current_section = get_section(path=ancestor) %}
+    {% else %}
+    {% set current_section = root_section %}
     {% endif %}
 
     {% if current_section.ancestors | length > 1 %}

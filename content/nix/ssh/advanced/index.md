@@ -2,6 +2,11 @@
 title = "Advanced"
 weight = 1
 insert_anchor_links = "left"
+
+updated = 2023-12-29
+
+[taxonomies]
+authors = ["Jonathan", "Vivian"]
 +++
 
 

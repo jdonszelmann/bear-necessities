@@ -1,0 +1,10 @@
+{% block content %}
+<h1>{{ term.name }}</h1>
+<ul>
+{% for page in term.pages %}
+  <li>
+    <a href="{{ page.permalink | safe }}">{% if page.date %}{{ page.date }} - {% endif %}{{ page.title }}</a>
+  </li>
+{% endfor %}
+</ul>
+{% endblock content %}

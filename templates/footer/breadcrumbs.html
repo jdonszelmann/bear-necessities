@@ -2,7 +2,11 @@
     {% if page %}
     {% set ancestors = page.ancestors %}
     {% set last = page %}
+    {% elif section %}
+    {% set ancestors = section.ancestors %}
+    {% set last = section %}
     {% else %}
+    {% set section = get_section(path="_index.md") %}
     {% set ancestors = section.ancestors %}
     {% set last = section %}
     {% endif %}

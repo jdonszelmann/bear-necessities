@@ -4,8 +4,20 @@ See <https://es.0x76.dev>.
 
 ## Contributing
 Any contributions are more than welcome, please make a pull request if you notice any mistakes or have a post to add for yourself.
-When adding your own post make sure to set the `author` key in the [Zola frontmatter](https://www.getzola.org/documentation/content/page/#front-matter).
+When adding your own post make sure to set the `authors` taxonomy key in the [Zola frontmatter](https://www.getzola.org/documentation/content/page/#front-matter).
 In any case update the `updated` key.
+
+e.g.
+```toml
++++
+...
+updated = 2023-12-29
+
+[taxonomies]
+authors = ["Jonathan", "Vivian"]
++++
+...
+```
 
 ## How to Develop
 We use [Zola](https://www.getzola.org) as our static site generator, so check its documentation for a general overview.
