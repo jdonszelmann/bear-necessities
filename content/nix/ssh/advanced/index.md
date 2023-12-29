@@ -18,7 +18,7 @@ ssh -ND 9999 <host>
 Now, in your web browser (Firefox shown below) go to proxy settings
 (about:preferences, search "proxy") and configure as follows:
 
-![Setting up a proxy under Firefox: Select Manual Proxy Configuration and leave all fields blank except "SOCKS Host" (fill with localhost) and the corresponding port (9999)](./proxy-firefox.png)
+![Setting up a proxy under Firefox: Select Manual Proxy Configuration and leave all fields blank except "SOCKS Host", fill with localhost, and the corresponding port 9999](./proxy-firefox.png)
 
 ## Proxy Jumping
 
