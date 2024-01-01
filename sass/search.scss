@@ -28,6 +28,8 @@
 @media (min-width: $step2) {
   #topright {
     justify-content: right;
+    justify-self: end;
+    max-width: 15em;
   }
 
   #search-parent {
@@ -41,6 +43,13 @@
 
   .search-results {
     width: 50vw;
+  }
+}
+
+@media (max-width: $step1) and (min-width: $step2) {
+  #topright {
+    max-width: 10em;
+    animation: max-width 1s ease;
   }
 }
 
