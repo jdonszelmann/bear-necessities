@@ -10,7 +10,7 @@ authors = ["Jonathan"]
 This is a very short summary of SSH basics to use as a reference. 
 For anything but that, look at our other pages or the [Arch wiki](https://wiki.archlinux.org/title/OpenSSH)
 
-## SSH into a machine
+## Basic Usage
 
 The simplest possible SSH command looks as follows:
 
