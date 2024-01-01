@@ -1,5 +1,5 @@
 +++
-title = "Basics"
+title = "SSH Basics"
 weight = 0
 insert_anchor_links = "left"
 
