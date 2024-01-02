@@ -1,11 +1,7 @@
 
+let clicked = false;
+
 function changeSelection() {
-    const currPage = document.getElementsByClassName("page selected")[0];
-    if (!currPage) {
-        return;
-    }
-
-
     const content = document.getElementsByClassName("content")[0];
     if (!content) {
         return;
@@ -30,8 +26,21 @@ function changeSelection() {
         return;
     }
 
+    if (!clicked) {
+        setSelection(bestElem.id);
+    } else {
+        clicked = false;
+    }
+}
+
+function setSelection(id) {
+    const currPage = document.getElementsByClassName("page selected")[0];
+    if (!currPage) {
+        return;
+    }
+
     for (const li of currPage.nextSibling.querySelectorAll("li")) {
-        if (bestElem.id === li.dataset.id) {
+        if (id === li.dataset.id) {
             li.classList.add("selected");
         } else {
             li.classList.remove("selected");
@@ -39,6 +48,22 @@ function changeSelection() {
     }
 }
 
-window.addEventListener("readystatechange", changeSelection)
-window.addEventListener("scroll", changeSelection)
+function registerListeners() {
+    for (const i of document.querySelectorAll("aside.left li.heading.section")) {
+        i.addEventListener("click", () => {
+            clicked = true;
+            setSelection(i.dataset.id);
+        })
+    }
+}
+
+window.addEventListener("load", registerListeners);
+window.addEventListener("load", () => {
+    console.log("load");
+    changeSelection();
+});
+window.addEventListener("scroll", () => {
+    console.log("scroll")
+    changeSelection();
+});
 
