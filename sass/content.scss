@@ -61,6 +61,7 @@ ul.toc {
     padding-left: 0.6em;
     font-family: 'DejaVu Sans Mono', sans-serif;
 
+
     // .section::marker, .page::marker {
     // font-size: larger;
     // }
@@ -74,7 +75,7 @@ ul.toc {
     }
 
     .heading::marker {
-        content: "";
+        content: " ";
     }
 }
 

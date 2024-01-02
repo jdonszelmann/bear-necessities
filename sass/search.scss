@@ -79,10 +79,15 @@
   border-radius: 0.35em;
   box-sizing: border-box;
 
+  z-index: 10;
 
   position: absolute;
   right: 0;
   display: none;
+
+  b {
+    color: var(--metaColor);
+  }
 
   a {
     color: inherit;
