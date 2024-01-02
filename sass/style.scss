@@ -121,6 +121,10 @@ html,
   ul.toc {
     padding-left: 2em;
   }
+
+  main {
+    margin-left: 1.5em;
+  }
 }
 
 @media (min-width: $step2) {
@@ -136,6 +140,10 @@ html,
     top: 0;
     margin-left: 1em;
     padding-left: 1em;
+  }
+
+  main {
+    margin-left: 2.3em;
   }
 }
 
@@ -193,7 +201,6 @@ main {
   flex-direction: column;
   align-items: center;
   padding: 1em;
-  margin-left: 3em;
 }
 
 .content {
