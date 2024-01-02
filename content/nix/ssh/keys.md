@@ -39,7 +39,7 @@ To prove that you are allowed to, you use your private key which,
 if managed properly, only you know.
 This all happens automatically. 
 
-If you have a private key, and machine you log in to has the corresponding public key, no password is needed and you instantly ger access over SSH or [SCP](./copying.md).
+If you have a private key, and machine you log in to has the corresponding public key, no password is needed and you instantly ger access over SSH or [SCP](@/nix/ssh/copying.md).
 
 ## Creating keys
 

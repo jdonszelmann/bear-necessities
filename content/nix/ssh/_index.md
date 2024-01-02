@@ -15,7 +15,7 @@ When you 'ssh into a machine' your terminal is essentially transformed into the 
 Any command you run, runs on that machine, not your own.
 This can be useful in myriad ways, but you often see this when logging in to servers or compute clusters.
 
-Using SSH, you can also [copy files](./copying.md) from and to machines.
+Using SSH, you can also [copy files](@/nix/ssh/copying.md) from and to machines.
 
 Although these pages might serve like a quick reference for SSH commands,
 it is by no means complete or intended to be complete. 

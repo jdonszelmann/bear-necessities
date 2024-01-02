@@ -7,57 +7,57 @@ insert_anchor_links = "left"
 authors = ["Jonathan"]
 +++
 
-## Using SCP
+## Using Rsync
 
-Using `scp` you can copy files from and to any machine you have ssh access to. The basic command looks very similar to `cp`:
+Using `rsync` you can copy files from and to any machine you have ssh access to. The basic command looks very similar to `cp`:
 
 ```bash
-scp src dst
+rsync -P src dst
 ```
 
 However, usually one of these two arguments contains a `:` to specify a remote location. 
 For example:
 ```bash
-scp example.com:~/Downloads/test.pdf .
+rsync -P example.com:~/Downloads/test.pdf .
 ```
 Copies from a location on example.com to the current directory
 The other way around is also allowed:
 ```bash
-scp test.pdf example.com:~/Downloads
+rsync -P test.pdf example.com:~/Downloads
 ```
 
 Just like with `ssh`, the part that specifies the remote location can be altered in various ways:
 
 ```bash
 # to a specific user
-scp test.pdf quinn@example.com:~/Downloads
+rsync -P test.pdf quinn@example.com:~/Downloads
 
-# With a specific port (note, capital P)
-scp test.pdf quinn@example.com:~/Downloads -P 1234
+# With a specific port
+rsync -P test.pdf quinn@example.com:~/Downloads --port 1234
 
 # `myserver` will be looked up in ~/.ssh/config
 # assuming there is an appropriate entry there
-scp test.pdf myserver:~/Downloads -P 1234
+rsync -{} test.pdf myserver:~/Downloads --port 1234
 ```
 
 ### Copying directories
 
-To copy a directory with scp you need to explicitly pass the `-r`
+To copy a directory with `rsync` you need to explicitly pass the `-r`
 
-## Using rsync
+## Using scp
 
-Using `rsync` is pretty much exactly like using `scp`. 
+Using `scp` is pretty much exactly like using `rsync`. 
 Most command line flags work the same. 
-However, rsync has some features which can be very useful such being able to resume after after partially copying a file, 
-and giving better progress indication. 
+However, `scp` is outdated, and much less nice to use.
+For example `-P` in rsync gives progress indicators and resumption of large file copies, something
+`scp` cannot do.
 
 We always recommend using `rsync` over `scp` when possible. 
 However, both the client and the server need to have `rsync` installed, which could be an issue.
 
-The basic usage is:
+If you need to, you can use `scp` like `rsync`, without the `-P` flag
 ```bash
-rsync -P source destination
+scp source destination
 ```
-`-P` enables both the features discussed above: partial copying and progress indication.
 
-> Just like with `scp`, pass `-r` to copy directories.
+> Just like with `rsync`, pass `-r` to copy directories.

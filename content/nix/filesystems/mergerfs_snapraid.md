@@ -8,7 +8,7 @@ This page is all about the specific deployment configuration of using MergerFS a
 Which can also be seen as a free alternative to [Unraid](https://unraid.net/).
 
 ## Replacing a parity disk
-First format the disk as required (see also [basic](./basics.md)).
+First format the disk as required (see also [basic](@/nix/filesystems/basics.md)).
 
 Then add the new disk as an **extra** parity disk.
 Which might look something like this (`/etc/snapraid.conf`):

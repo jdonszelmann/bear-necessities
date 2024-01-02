@@ -6,7 +6,7 @@ insert_anchor_links = "left"
 authors = ["Jonathan"]
 +++
 
-Find and [ripgrep](./ripgrep.md) can do similar things. If you find can't do what you're looking for, ripgrep might.
+Find and [ripgrep](@/nix/ripgrep.md) can do similar things. If you find can't do what you're looking for, ripgrep might.
 
 ## Find commands
 
@@ -18,7 +18,7 @@ Recursively list all files with the given extension
 
 ## Find and xargs
 
-To make the output of find actually useful, one technique I like to use is to [pipe](./shell/pipes.md) output into `xargs`. `xargs` takes all lines in [stdin](./shell/pipes.md) and gives a command many parameters, one for every line.
+To make the output of find actually useful, one technique I like to use is to [pipe](@/nix/shell/pipes.md) output into `xargs`. `xargs` takes all lines in [stdin](@/nix/shell/pipes.md) and gives a command many parameters, one for every line.
 
 The following snippet counts all the lines in all the rust files recursively
 found in the current directory.

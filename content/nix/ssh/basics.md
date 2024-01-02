@@ -40,19 +40,19 @@ ssh user@example.com
 > syntax for specifying ports of `domain:port`. 
 > There is the `-p` flag instead. 
 
-For more, see [advanced ssh](./advanced/index.md).
+For more, see [advanced ssh](@/nix/ssh/advanced/index.md).
 
 ## Logging in
 
 When you connect to an ssh server, you may be asked for a username and password. Note that this is a setting the server may have disabled outright for security reasons. 
 Even if a server does provide password login as an option, 
-we highly recommend you use [ssh keys](./keys.md) instead as they are more secure, and after initial setup easier to use.
+we highly recommend you use [ssh keys](@/nix/ssh/keys.md) instead as they are more secure, and after initial setup easier to use.
 
 ## SSH Config
 
 Remembering SSH commands is hard. 
 To help you, you can use an ssh configuration file.
-All ssh configuration is stored the `.ssh` directory which is in your home directory. (`~/.ssh`) You will find your [keys](./keys.md)
+All ssh configuration is stored the `.ssh` directory which is in your home directory. (`~/.ssh`) You will find your [keys](@/nix/ssh/keys.md)
 
 In a text file called config (`~/.ssh/config`) you can write your ssh configuration in the following format:
 

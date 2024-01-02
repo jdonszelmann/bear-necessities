@@ -55,7 +55,7 @@
                     <ul class="toc">
 
                         {% for p in page.toc %}
-                        <li class="heading {{ class }}"><a href="{{ p.permalink }}">{{ macros::get_title(of=p) }}</a>
+                        <li class="heading section"><a href="{{ p.permalink }}">{{ macros::get_title(of=p) }}</a>
                         </li>
                         {% endfor %}
                     </ul>
@@ -80,7 +80,7 @@
                 <ul class="toc">
 
                     {% for p in page.toc %}
-                    <li class="heading {{ class }}"><a href="{{ p.permalink }}">{{ macros::get_title(of=p) }}</a>
+                    <li class="heading section"><a href="{{ p.permalink }}">{{ macros::get_title(of=p) }}</a>
                     </li>
                     {% endfor %}
                 </ul>
