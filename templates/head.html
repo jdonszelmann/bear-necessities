@@ -1,5 +1,11 @@
 <meta charset="UTF-8" />
 <meta content="IE=edge" http-equiv="X-UA-Compatible" />
+
+<!-- theming -->
+<link rel="stylesheet" href="/dark.css" media="(prefers-color-scheme: dark),(prefers-color-scheme: no-preference)">
+<link rel="stylesheet" href="/light.css" media="(prefers-color-scheme: light)">
+<script defer type="module" src="{{ get_url(path='js/dark-mode-toggle.mjs') }}"></script>
+
 <script defer src="{{ get_url(path='js/copy-code.js')}}"></script>
 <script defer src="{{ get_url(path='js/search.js')}}"></script>
 <script defer src="{{ get_url(path='elasticlunr.min.js') }}"></script>
@@ -64,5 +70,3 @@
 {% block css %}
 <link rel="stylesheet" href="{{ get_url(path='style.css') }}" />
 {% endblock css %}
-
-<script src="{{ get_url(path='js/theme.js') }}"></script>

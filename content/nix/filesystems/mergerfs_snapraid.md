@@ -18,7 +18,6 @@ data d2 /mnt/disk2
 data d3 /mnt/disk3
 parity /mnt/parity1/snapraid.parity
 2-parity /mnt/parity2/snapraid.parity-2 # <-- this being the new disk
-
 ```
 
 Afterwards do a full parity sync by providing `-F` to snapraid sync, as follows:
