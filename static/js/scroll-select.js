@@ -58,12 +58,6 @@ function registerListeners() {
 }
 
 window.addEventListener("load", registerListeners);
-window.addEventListener("load", () => {
-    console.log("load");
-    changeSelection();
-});
-window.addEventListener("scroll", () => {
-    console.log("scroll")
-    changeSelection();
-});
+window.addEventListener("load", changeSelection)
+window.addEventListener("scroll", changeSelection);
 
