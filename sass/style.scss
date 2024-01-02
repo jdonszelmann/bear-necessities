@@ -208,9 +208,11 @@ main {
   width: 100%;
 }
 
-.toc {
-  .selected {
-    font-weight: bold;
+.toc .selected {
+  font-weight: bolder;
+
+  span {
+    color: var(--selectedColor);
   }
 }
 
