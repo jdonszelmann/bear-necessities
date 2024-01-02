@@ -70,7 +70,3 @@ ssh-copy-id lyss@machine
 # and instantly logs in
 ssh lyss@machine
 ```
-
-
-
-

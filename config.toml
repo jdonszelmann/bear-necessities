@@ -10,10 +10,7 @@ minify_html = true
 build_search_index = true
 default_language = "en"
 
-taxonomies = [
-    { name = "tags", feed = true },
-    { name = "authors", feed = true }
-]
+taxonomies = [{ name = "tags", feed = true }, { name = "authors", feed = true }]
 
 [search]
 index_format = "elasticlunr_json"
@@ -23,3 +20,6 @@ index_format = "elasticlunr_json"
 # Theme can be customised by setting the `highlight_theme` variable to a theme supported by Zola
 highlight_code = true
 highlight_theme = "charcoal"
+
+[extra]
+page_break = "0.33"
