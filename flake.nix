@@ -10,7 +10,7 @@
         nativeBuildInputs = with pkgs; [ zola ];
         buildInputs = with pkgs; [ ];
         nerdfonts = pkgs.nerdfonts.override {
-          fonts = [ "DejaVuSansMono" "NerdFontsSymbolsOnly" "Noto" ];
+          fonts = [ "DejaVuSansMono" "NerdFontsSymbolsOnly" ];
         };
       in
       with pkgs; rec {
