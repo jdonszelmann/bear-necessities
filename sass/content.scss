@@ -4,6 +4,8 @@ pre {
     overflow-x: scroll;
     position: relative;
 
+    font-family: 'Fira Mono', monospace;
+
     &::before {
         display: block;
         content: attr(data-lang);
@@ -21,8 +23,8 @@ pre {
 }
 
 .copy-button {
+    font-family: "NerdFontsSymbols Nerd Font";
     position: absolute;
-    font-family: 'DejaVu Sans Mono', sans-serif;
     font-size: larger;
     top: 0.25em;
     right: 0.25em;
@@ -59,23 +61,20 @@ pre code {
 
 ul.toc {
     padding-left: 0.6em;
-    font-family: 'DejaVu Sans Mono', sans-serif;
-
-
-    // .section::marker, .page::marker {
-    // font-size: larger;
-    // }
 
     .section::marker {
-        content: " ";
+        font-family: 'NerdFontsSymbols Nerd Font';
+        content: "\e5ff ";
     }
 
     .page::marker {
-        content: " ";
+        font-family: 'NerdFontsSymbols Nerd Font';
+        content: "\f15b ";
     }
 
     .heading::marker {
-        content: " ";
+        font-family: 'NerdFontsSymbols Nerd Font';
+        content: "\f453";
     }
 }
 

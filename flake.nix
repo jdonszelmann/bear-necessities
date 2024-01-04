@@ -10,10 +10,11 @@
         nativeBuildInputs = with pkgs; [ zola ];
         buildInputs = with pkgs; [ ];
         nerdfonts = pkgs.nerdfonts.override {
-          fonts = [ "DejaVuSansMono" "NerdFontsSymbolsOnly" ];
+          fonts = [ "NerdFontsSymbolsOnly" ];
         };
+        
       in
-      with pkgs; rec {
+      rec {
         packages = rec {
           website = pkgs.stdenv.mkDerivation {
             pname = "essentials-website";
@@ -22,14 +23,17 @@
             inherit nativeBuildInputs buildInputs;
             configurePhase = ''
               # Pre-processing here
+              mkdir -p ./static/fonts
               ln -sf ${nerdfonts}/share/fonts/truetype/NerdFonts/* static/fonts/
+              ln -sf ${pkgs.fira}/share/fonts/opentype/* static/fonts/
+              ln -sf ${pkgs.fira-mono}/share/fonts/opentype/* static/fonts/
             '';
             buildPhase = "zola build";
             installPhase = "cp -r public $out";
           };
           default = website;
         };
-        devShells.default = mkShell {
+        devShells.default = pkgs.mkShell {
           inherit buildInputs nativeBuildInputs;
           packages = with pkgs; [ lychee ];
           shellHook = packages.website.configurePhase;

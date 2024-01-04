@@ -1,0 +1,51 @@
+@font-face {
+  font-family: 'NerdFontsSymbols Nerd Font';
+  src: url('/fonts/SymbolsNerdFont-Regular.ttf')
+}
+
+.nf {
+	font-family: 'NerdFontsSymbols Nerd Font';
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+@font-face {
+  font-family: 'Fira Sans', Helvetica, Arial, sans-serif;
+  src: url('/fonts/FiraSans-Regular.ttf');
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: 'Fira Sans', Helvetica, Arial, sans-serif;
+  src: url('/fonts/FiraSans-Medium.ttf');
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: 'Fira Sans', Helvetica, Arial, sans-serif;
+  src: url('/fonts/FiraSans-Bold.ttf');
+  font-weight: bolder;
+}
+
+@font-face {
+  font-family: 'Fira Mono';
+  src: url('/fonts/FiraMono-Regular.otf'), monospace;
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: 'Fira Mono';
+  src: url('/fonts/FiraMono-Medium.otf'), monospace;
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: 'Fira Mono';
+  src: url('/fonts/FiraMono-Bold.otf'), monospace;
+  font-weight: bolder;
+}

@@ -2,6 +2,7 @@
 @import "search.scss";
 @import "variables.scss";
 @import "content.scss";
+@import "fonts.scss";
 
 #dark-mode-toggle-1 {
   --dark-mode-toggle-dark-icon: url("/sun.svg");
@@ -10,17 +11,6 @@
   --dark-mode-toggle-icon-filter: invert(100%);
 }
 
-@font-face {
-  font-family: 'DejaVu Sans Mono';
-  src: url('/fonts/DejaVuSansMNerdFontMono-Regular.ttf');
-  font-weight: normal;
-}
-
-@font-face {
-  font-family: 'DejaVu Sans Moano';
-  src: url('/fonts/DejaVuSansMNerdFontMono-Bold.ttf');
-  font-weight: bold;
-}
 
 body,
 html,
@@ -30,7 +20,7 @@ html,
   width: 100%;
   height: 100%;
 
-  font-family: 'DejaVu Sans Mono', sans-serif;
+  font-family: 'Fira Sans', Helvetica, Arial, sans-serif;
   font-size: large;
   background-color: var(--bgColor);
   color: var(--fgColor);
