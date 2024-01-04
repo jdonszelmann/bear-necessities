@@ -194,39 +194,3 @@ main {
   margin-bottom: 20vh;
 }
 
-.content {
-  width: 100%;
-}
-
-.toc .selected {
-  font-weight: bolder;
-
-  span {
-    color: var(--selectedColor);
-  }
-}
-
-pre {
-  padding: 1em;
-  border-radius: 0.25em;
-}
-
-ul.toc {
-  padding-left: 0.6em;
-
-  // .section::marker, .page::marker {
-  // font-size: larger;
-  // }
-
-  .section {
-    list-style-type: " ";
-  }
-
-  .page {
-    list-style-type: " ";
-  }
-
-  .heading {
-    list-style-type: " ";
-  }
-}

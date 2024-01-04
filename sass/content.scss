@@ -1,3 +1,15 @@
+.content {
+    width: 100%;
+}
+
+.toc .selected {
+    font-weight: bolder;
+
+    span {
+        color: var(--selectedColor);
+    }
+}
+
 pre {
     padding: 1em;
     border-radius: 0.25em;
@@ -61,20 +73,30 @@ pre code {
 
 ul.toc {
     padding-left: 0.6em;
+    font-family: 'NerdFontsSymbols Nerd Font', 'Fira Sans', Helvetica, Arial, sans-serif;
 
     .section::marker {
-        font-family: 'NerdFontsSymbols Nerd Font';
         content: "\e5ff ";
     }
 
     .page::marker {
-        font-family: 'NerdFontsSymbols Nerd Font';
         content: "\f15b ";
     }
 
     .heading::marker {
-        font-family: 'NerdFontsSymbols Nerd Font';
         content: "\f453";
+    }
+
+    .section {
+        list-style-type: "\e5ff ";
+    }
+
+    .page {
+        list-style-type: "\f15b ";
+    }
+
+    .heading {
+        list-style-type: "\f453 ";
     }
 }
 
@@ -94,7 +116,12 @@ ul li::marker {
 }
 
 ul li {
-    list-style-type: '» ';
+    font-family: 'NerdFontsSymbols Nerd Font', 'Fira Sans', Helvetica, Arial, sans-serif;
+
+    &::marker {
+        content: "\f101 ";
+    }
+    list-style-type: '\f101 ';
 }
 
 ul li:hover::marker {
