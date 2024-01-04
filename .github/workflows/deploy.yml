@@ -37,7 +37,7 @@ jobs:
         uses: DeterminateSystems/magic-nix-cache-action@v2
       - name: Build server and client
         run: |
-          nix build .#
+          nix build '.#staging'
       - name: Setup Pages
         uses: actions/configure-pages@v4
       - name: Upload artifact
