@@ -1,6 +1,6 @@
 # The 🐻 necessities
 
-See <https://es.0x76.dev>.
+See <https://bear.0x76.dev>.
 
 ## Contributing
 Any contributions are more than welcome, please make a pull request if you notice any mistakes or have a post to add for yourself.
